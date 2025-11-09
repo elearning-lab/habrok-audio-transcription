@@ -23,4 +23,15 @@ Automated audio transcription with speaker diarization for the RUG Habrok HPC cl
 👉 **[QUICK_START.md](QUICK_START.md)** - Copy-paste commands for everyday transcription
 
 
+## ⚡ Common Commands Reference
+
+### Connect to Habrok
 ```bash
+ssh YOUR_P_NUMBER@login1.hb.hpc.rug.nl
+```
+
+### Submit single file job
+```bash
+cd /scratch/$USER/audio_processing
+sbatch run_audio.sh
+```
