@@ -22,7 +22,5 @@ Automated audio transcription with speaker diarization for the RUG Habrok HPC cl
 ### For Daily Use
 👉 **[QUICK_START.md](QUICK_START.md)** - Copy-paste commands for everyday transcription
 
----
 
-## ⚡ Quick Example
 ```bash
