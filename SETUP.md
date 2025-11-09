@@ -34,13 +34,17 @@ Open Terminal (Mac/Linux) or PowerShell (Windows) and log in with your p-number:
 ```bash
 ssh YOUR_P_NUMBER@login1.hb.hpc.rug.nl
 ```
+E.g. 
+```bash
+ssh p123456@login1.hb.hpc.rug.nl
+```
 
-Enter your password. No characters will show as you type. that is normal. 
+Enter your password. No characters will show as you type. That is normal. 
 Enter your 2FA token from your Authenticator app.
 
 You should now see the Habrok login screen. 
 
-### 4. Create Project Structure
+### 4. Create Project Structure 
 ```bash
 cd /scratch/$USER/
 mkdir -p audio_processing whisper/input whisper/output
@@ -68,7 +72,7 @@ Add this line at the bottom (paste YOUR token):
 export HF_TOKEN="hf_YOUR_TOKEN_HERE"
 ```
 
-Save: `Ctrl+O`, `Enter`, `Ctrl+X`
+Save (on Mac): `Ctrl+O`, `Enter`, `Ctrl+X`
 
 Load it:
 ```bash
@@ -102,14 +106,31 @@ Save (for Mac): `Ctrl+O`, `Enter`, `Ctrl+X`
 
 ## Usage (Every Time)
 
-### 1. Upload Audio File
+### Option A: Upload via Web Portal (Easier)
+
+1. Go to: **https://portal.hb.hpc.rug.nl**
+2. Log in with your p-number and password
+3. Click **Files** → **Home Directory**
+4. Navigate to: `/scratch/YOUR_P_NUMBER/whisper/input/`
+5. Click **Upload** button
+6. Select your audio files
+7. Continue to Step 2 below
+
+### Option B: Upload via Command Line
 ```bash
 scp your_audio.mp3 YOUR_P_NUMBER@login1.hb.hpc.rug.nl:/scratch/$USER/whisper/input/
 ```
 
 ### 2. Submit Job
 
-Connect to Habrok:
+**Via Web Portal:**
+1. Still on https://portal.hb.hpc.rug.nl
+2. Click **Jobs** → **Job Composer**
+3. **New Job** → **From Default Template**
+4. Replace script content with the contents of `run_audio.sh`
+5. Click **Submit**
+
+**Via Terminal:**
 ```bash
 ssh YOUR_P_NUMBER@login1.hb.hpc.rug.nl
 cd /scratch/$USER/audio_processing
@@ -129,6 +150,15 @@ When complete, download from your computer:
 ```bash
 scp YOUR_P_NUMBER@login1.hb.hpc.rug.nl:/scratch/$USER/whisper/output/* ~/Downloads/
 ```
+
+---
+
+## 💡 Pro Tips
+
+- **View files in browser:** Navigate to https://portal.hb.hpc.rug.nl → **Files** to browse all your folders
+- **Check job status in browser:** https://portal.hb.hpc.rug.nl → **Jobs** → **Active Jobs**
+- **Download results via browser:** Navigate to `/scratch/YOUR_P_NUMBER/whisper/output/` and click files to download
+- **Edit scripts in browser:** Click on any `.sh` or `.py` file → **Edit** button
 
 ---
 
