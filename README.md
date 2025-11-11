@@ -17,6 +17,7 @@ Automated audio transcription with speaker diarization for the RUG Habrok HPC cl
 ## 📚 Documentation
 
 ### For First-Time Users
+👉 **[SSH_SETUP.md](SSH_SETUP.md)** - Set up passwordless SSH access (5 min, one-time)
 👉 **[SETUP.md](SETUP.md)** - Complete installation guide (30 minutes)
 
 ### For Daily Use
